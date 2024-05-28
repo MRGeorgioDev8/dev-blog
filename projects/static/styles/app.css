@@ -201,6 +201,10 @@ img {
   text-transform: uppercase;
 }
 
+.hero-section__box h2 span {
+  color: #29a6b2;
+}
+
 @media screen and (max-width: 1000px) {
   .hero-section__box > h2,
   .hero-section__box > h2 > span {
