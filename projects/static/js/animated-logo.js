@@ -3,5 +3,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     gsap.set(logo, { scale: 2 });
 
-    gsap.to(logo, { scale: 1, duration: 1, ease: "power2.inOut" });
+    gsap.to(logo, { scale: 1, duration: 1, ease: "power1.inOut" });
 });
