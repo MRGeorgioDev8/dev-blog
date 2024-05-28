@@ -70,6 +70,30 @@ img {
   font-weight: 300;
 }
 
+.header__menuItem  {
+  position: relative;
+  right: 46%;
+  text-decoration: none;
+  font-size: 20px;
+  color: #7e7e7e;
+  font-weight: bold;
+}
+
+.header__menuItem::after {
+  content: "";
+  display: block;
+  position: relative;
+  bottom: -1px;
+  width: 0;
+  height: 1.9px;
+  background-color: #29a7b2f0;
+  transition: width 0.3s ease;
+}
+
+.header__menuItem:hover::after {
+  width: 100%;
+}
+
 .toggle-menu > span {
   display: none;
 }
