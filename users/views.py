@@ -52,7 +52,7 @@ def login_user(request):
         try:
             user = User.objects.get(username=username)
         except ObjectDoesNotExist:
-            messages.error(request, "Username does not exists")
+            messages.error(request, "Имя пользователя не существует")
 
         user = authenticate(request, username=username, password=password)
 
@@ -60,14 +60,14 @@ def login_user(request):
             login(request, user)
             return redirect('profiles')
         else:
-            messages.error(request, "Username or password is incorrect")
+            messages.error(request, "Имя пользователя или пароль неверны")
 
     return render(request, "users/login_register.html")
 
 
 def logout_user(request):
     logout(request)
-    messages.info(request, "User was logged out!")
+    messages.info(request, "Пользователь вышел из системы!")
     return redirect('login')
 
 
@@ -82,12 +82,12 @@ def register_user(request):
             user.username = user.username.lower()
             user.save()
 
-            messages.success(request, 'User account was created!')
+            messages.success(request, 'Учетная запись пользователя создана!')
 
             login(request, user)
             return redirect('profiles')
         else:
-            messages.error(request, 'An error has occurred during registration')
+            messages.error(request, 'Во время регистрации произошла ошибка')
     context = {'page': page, 'form': form}
     return render(request, "users/login_register.html", context)
 
@@ -131,7 +131,7 @@ def create_skill(request):
             skill = form.save(commit=False)
             skill.owner = profile
             skill.save()
-            messages.success(request, "Skill was added successfully!")
+            messages.success(request, "Навык успешно добавлен!")
             return redirect("account")
 
     context = {"form": form}
@@ -148,7 +148,7 @@ def update_skill(request, pk):
         form = SkillForm(request.POST, instance=skill)
         if form.is_valid():
             form.save()
-            messages.success(request, "Skill was update successfully!")
+            messages.success(request, "Навык был успешно обновлен!")
             return redirect("account")
 
     context = {'form': form}
@@ -161,7 +161,7 @@ def delete_skill(request, pk):
     skill = profile.skill_set.get(id=pk)
     if request.method == "POST":
         skill.delete()
-        messages.success(request, "Skill was deleted successfully!")
+        messages.success(request, "Навык был успешно удален!")
         return redirect('account')
     context = {'object': skill}
     return render(request, "projects/delete.html", context)

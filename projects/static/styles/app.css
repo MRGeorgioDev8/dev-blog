@@ -48,6 +48,12 @@ img {
 .header__logo img {
   width: 80px;
   height: 70px;
+  opacity: 0.8;
+  transition: opacity ease-in-out 0.3s;
+}
+
+.header__logo img:hover {
+  opacity: 1;
 }
 
 .header__nav > ul {

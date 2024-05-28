@@ -36,7 +36,7 @@ def project(request, pk):
 
         project_obj.get_vote_count()
 
-        messages.success(request, 'Your review was successfully submitted!')
+        messages.success(request, 'Ваш отзыв успешно отправлен!')
         return redirect('project', pk=project_obj.id)
 
     return render(request, "projects/single-project.html", {'project': project_obj, 'form': form})
