@@ -8,5 +8,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     gsap.set(span, { opacity: 0 });
 
-    gsap.to(span, { opacity: 1,  duration: 1, delay: 0.5, ease: "bounce.out" });
+    gsap.to(span, { opacity: 1,  duration: 1, delay: 0.4, ease: "bounce.out" });
 });
