@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 from django.shortcuts import render
 
-# Create your views here.
-=======
+
+
 from django.shortcuts import render, redirect
 from .models import Profile, Message
 from django.contrib.auth import logout, login, authenticate
@@ -30,7 +30,7 @@ def profiles(request):
 def user_profile(request, pk):
     prof = Profile.objects.get(id=pk)
 
-    top_skills = prof.skill_set.exclude(description__exact="")  # __exact - точное совпадение
+    top_skills = prof.skill_set.exclude(description__exact="")
     other_skills = prof.skill_set.filter(description="")
 
     context = {
@@ -210,7 +210,7 @@ def create_message(request, pk):
                 message.email = sender.email
             message.save()
 
-            messages.success(request, 'Your message was successfully sent!')
+            messages.success(request, 'Ваше сообщение доставлено!')
             return redirect('user_profile', pk=recipient.id)
 
     context = {
@@ -218,4 +218,3 @@ def create_message(request, pk):
         'form': form
     }
     return render(request, 'users/message_form.html', context)
->>>>>>> a4dc97f (new)

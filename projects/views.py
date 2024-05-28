@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 from django.shortcuts import render
 
-# Create your views here.
-=======
+
+
 from django.shortcuts import render, redirect
 from .models import Project
 from .forms import ProjectForm, ReviewForm
@@ -84,4 +84,3 @@ def delete_project(request, pk):
         return redirect("account")
     context = {"object": project}
     return render(request, "projects/delete.html", context)
->>>>>>> a4dc97f (new)

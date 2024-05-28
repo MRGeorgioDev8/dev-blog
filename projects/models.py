@@ -1,10 +1,6 @@
 from django.db import models
 from users.models import Profile
 
-<<<<<<< HEAD
-=======
-
->>>>>>> a4dc97f (new)
 class Project(models.Model):
     owner = models.ForeignKey(Profile, on_delete=models.SET_NULL, blank=True, null=True)
     title = models.CharField(max_length=200)
@@ -62,8 +58,6 @@ class Review(models.Model):
         return self.value
 
     class Meta:
-<<<<<<< HEAD
         unique_together = [['owner', 'project']]
-=======
+
         unique_together = [['owner', 'project']]
->>>>>>> a4dc97f (new)
