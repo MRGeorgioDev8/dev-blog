@@ -8,8 +8,8 @@ class ReviewForm(ModelForm):
         model = Review
         fields = ['value', 'body']
         labels = {
-            'value': 'Place your vote',
-            'body': 'Add a comments with your vote'
+            'value': 'Отдайте свой голос',
+            'body': 'Добавьте комментарий с вашим голосом'
         }
 
     def __init__(self, *args, **kwargs):
