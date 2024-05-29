@@ -17,7 +17,6 @@
           {% csrf_token %}
 
           {% for field in form %}
-          <!-- Input:Text -->
           <div class="form__field">
             <label for="formInput#text">{{ field.label }}: </label>
             {{ field }}
@@ -52,7 +51,6 @@
 
         <form action="{% url 'login' %}" method="post" class="form auth__form">
           {% csrf_token %}
-            <!-- Input:Email -->
           <div class="form__field">
             <label for="formInput#text">Username: </label>
             <input

@@ -30,9 +30,8 @@ class Skill(models.Model):
 
 
 class Message(models.Model):
-    sender = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True, blank=True)  # отправитель
+    sender = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True, blank=True)
     recipient = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True, blank=True, related_name="messages")
-    # получатель
     name = models.CharField(max_length=200, null=True, blank=True)
     email = models.EmailField(max_length=200, null=True, blank=True)
     subject = models.CharField(max_length=200, null=True, blank=True)
@@ -45,9 +44,3 @@ class Message(models.Model):
 
     class Meta:
         ordering = ['is_read', '-created']
-
-
-
-
-
-

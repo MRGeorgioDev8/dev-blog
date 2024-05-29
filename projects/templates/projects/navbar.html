@@ -2,12 +2,15 @@
   <header class="header">
     <div class="container container--narrow">
       <a href="{% url 'profiles' %}" class="header__logo">
+
         <img src="{% static 'images/devsearchlogo.png' %}" alt="DevSearch Logo" />
+
+        <img src="{% static 'images/devsearchlogo.png' %}" alt="DevSearch Logo" id="logo" />
+
       </a>
       <nav class="header__nav">
         <input type="checkbox" id="responsive-menu" />
         <label for="responsive-menu" class="toggle-menu">
-          <span>Menu</span>
           <div class="toggle-menu__lines"></div>
         </label>
         <ul class="header__menu">
@@ -19,7 +22,8 @@
           <li class="header__menuItem"><a href="{% url 'create-project' %}">Add Projects</a></li>
           <li class="header__menuItem"><a href="{% url 'logout' %}" class="btn btn--sub">Logout</a></li>
           {% else %}
-          <li class="header__menuItem"><a href="{% url 'login' %}" class="btn btn--sub">Login/Sign Up</a></li>
+          <li class="header__menuItems"><a href="{% url 'login' %}" class="btn btn--sub">Login/Sign Up</a></li>
+
           {% endif %}
         </ul>
       </nav>
