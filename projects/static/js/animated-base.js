@@ -14,6 +14,15 @@ document.addEventListener("DOMContentLoaded", function() {
     gsap.to(span, { opacity: 1, duration: 1, delay: 0.4, ease: "bounce.out" });
 
     gsap.set(formWrapper, { y: -100, opacity: 0 });
-    gsap.to(formWrapper, { y: 0, opacity: 1, duration: 1, ease: "bounce.out", delay: 0.7 });
+    gsap.to(formWrapper, { y: 0, opacity: 1, duration: 1, ease: "bounce.out", delay: 0.4 });
     gsap.to(formWrapper, { y: "+=11", duration: 0.5, delay: 1.2 });
+
+    const cardBody = document.querySelector('.card.text-center');
+    gsap.set(cardBody, { y: -100, opacity: 0 });
+    gsap.to(cardBody, { y: 0, opacity: 1, duration: 1, ease: "bounce.out", delay: 0.4 });
+    gsap.to(cardBody, { y: "+=11", duration: 0.5, delay: 1.2 });
+
+    const settings = document.querySelectorAll('.devInfo, .settings');
+    gsap.set(settings, { opacity: 0 });
+    gsap.to(settings, { opacity: 1, duration: 1, ease: "bounce.out", delay: 0.7 });
 });
