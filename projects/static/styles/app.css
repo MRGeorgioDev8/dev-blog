@@ -28,6 +28,22 @@ img {
   color: white;
 }
 
+.dev__skills .tag  {
+  background-color: rgb(255, 255, 255);
+  color: white;
+}
+
+.tag.tag--pill.tag--sub.tag--lg {
+  background-color: #e8e8fd;
+}
+
+.tag.tag--pill.tag--main.settings__btn {
+  transition: background-color ease-in-out 0.3s;
+}
+
+.tag--pill.tag--main.settings__btn:hover {
+  background-color:#29a6b2;
+}
 
 .content-box {
   width: 95%;
