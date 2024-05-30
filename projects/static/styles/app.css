@@ -19,6 +19,15 @@ img {
   margin-right: 0.5rem;
 }
 
+.tag {
+  transition: background-color ease-in-out 0.3s;
+}
+
+.tag:hover {
+  background-color: #29a7b27b;
+  color: white;
+}
+
 .content-box {
   width: 95%;
   max-width: 85rem;
