@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
     gsap.to(cardBody, { y: 0, opacity: 1, duration: 1, ease: "bounce.out", delay: 0.4 });
     gsap.to(cardBody, { y: "+=11", duration: 0.5, delay: 1.2 });
 
-    const settings = document.querySelectorAll('.devInfo, .settings');
+    const settings = document.querySelectorAll('.devInfo, .settings, .settings__table');
     gsap.set(settings, { opacity: 0 });
     gsap.to(settings, { opacity: 1, duration: 1, ease: "bounce.out", delay: 0.7 });
 });
