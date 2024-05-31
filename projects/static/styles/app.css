@@ -6,6 +6,11 @@ input:focus {
   color:#29a6b2;
 }
 
+.column.card {
+  position:relative;
+  right: 40px;
+}
+
 .btn--sub {
   background-color: var(--color-sub-light);
 }
