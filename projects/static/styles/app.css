@@ -8,7 +8,7 @@ input:focus {
 
 .column.card {
   position:relative;
-  right: 40px;
+  right: 48px;
 }
 
 .btn--sub {
@@ -401,6 +401,11 @@ img {
 .pagination .btn.btn--sub {
   color: var(--color-light);
 }
+
+.btn.page-link.btn--sub {
+  background-color: #e16592e6;
+}
+
 
 /*=======================
   Profile
