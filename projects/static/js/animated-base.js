@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const logo = document.getElementById('logo');
     const span = document.querySelector('#animated-title span');
-    const devContainer = document.querySelector('.column.card');
+    const devContainer = document.querySelectorAll('.column.card');
     const formWrapper = document.querySelector('.formWrapper');
 
     gsap.set(devContainer, { x: -100, opacity: 0 });
