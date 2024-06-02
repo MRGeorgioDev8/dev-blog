@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const span = document.querySelector('#animated-title span');
     const devContainer = document.querySelectorAll('.column.card');
     const formWrapper = document.querySelector('.formWrapper');
+    const cardBody = document.querySelector('.card.text-center');
+    const settings = document.querySelectorAll('.devInfo, .settings, .settings__table');
+    const messagesList = document.querySelector('.messages');
+    const inboxTitle = document.querySelector('.inbox__title');
 
     gsap.set(devContainer, { x: -100, opacity: 0 });
     gsap.to(devContainer, { x: 40, opacity: 1, duration: 1, delay: 0.5, ease: "bounce.out" });
@@ -17,12 +21,17 @@ document.addEventListener("DOMContentLoaded", function() {
     gsap.to(formWrapper, { y: 0, opacity: 1, duration: 1, ease: "bounce.out", delay: 0.4 });
     gsap.to(formWrapper, { y: "+=11", duration: 0.5, delay: 1.2 });
 
-    const cardBody = document.querySelector('.card.text-center');
     gsap.set(cardBody, { y: -100, opacity: 0 });
     gsap.to(cardBody, { y: 0, opacity: 1, duration: 1, ease: "bounce.out", delay: 0.4 });
     gsap.to(cardBody, { y: "+=11", duration: 0.5, delay: 1.2 });
 
-    const settings = document.querySelectorAll('.devInfo, .settings, .settings__table');
     gsap.set(settings, { opacity: 0 });
     gsap.to(settings, { opacity: 1, duration: 1, ease: "bounce.out", delay: 0.7 });
+
+    gsap.set(messagesList, { opacity: 0 });
+    gsap.to(messagesList, { opacity: 1, duration: 1, ease: "bounce.out", delay: 0.7 });
+
+    gsap.set(inboxTitle, { x: -100, opacity: 0 });
+    gsap.to(inboxTitle, { x: 0, opacity: 1, duration: 1, ease: "bounce.out", delay: 0.4 });
+    gsap.to(inboxTitle, { x: "+=11", duration: 0.5, delay: 1.2 });
 });
