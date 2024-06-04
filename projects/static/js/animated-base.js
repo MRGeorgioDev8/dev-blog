@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const settings = document.querySelectorAll('.devInfo, .settings, .settings__table');
     const messagesList = document.querySelector('.messages');
     const inboxTitle = document.querySelector('.inbox__title');
+    const messageContainer = document.querySelector('.message')
 
     gsap.set(devContainer, { x: -100, opacity: 0 });
     gsap.to(devContainer, { x: 40, opacity: 1, duration: 1, delay: 0.5, ease: "bounce.out" });
@@ -34,4 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
     gsap.set(inboxTitle, { x: -100, opacity: 0 });
     gsap.to(inboxTitle, { x: 0, opacity: 1, duration: 1, ease: "bounce.out", delay: 0.4 });
     gsap.to(inboxTitle, { x: "+=11", duration: 0.5, delay: 1.2 });
+
+    gsap.set(messageContainer, {scale:0, y: -100, opacity: 0 });
+    gsap.to(messageContainer, {scale: 1, y: 0, opacity: 1, duration: 0.6, ease: "quad.inOut", delay: 0.3 });
 });
