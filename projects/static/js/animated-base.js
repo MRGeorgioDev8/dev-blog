@@ -1,17 +1,27 @@
 document.addEventListener("DOMContentLoaded", function() {
     const logo = document.getElementById('logo');
     const span = document.querySelector('#animated-title span');
-    const devContainer = document.querySelectorAll('.column.card');
+    const devContainers = document.querySelectorAll('.column.card');
     const formWrapper = document.querySelector('.formWrapper');
     const cardBody = document.querySelector('.card.text-center');
     const settings = document.querySelectorAll('.devInfo, .settings, .settings__table');
     const messagesList = document.querySelector('.messages');
     const inboxTitle = document.querySelector('.inbox__title');
-    const messageContainer = document.querySelector('.message')
-    const cardContainer = document.querySelector('.auth')
+    const messageContainer = document.querySelector('.message');
+    const cardContainer = document.querySelector('.auth');
 
-    gsap.set(devContainer, { x: -100, opacity: 0 });
-    gsap.to(devContainer, { x: 40, opacity: 1, duration: 1, delay: 0.3, ease: "bounce.out" });
+    gsap.set(devContainers, { x: -100, opacity: 0 });
+
+    devContainers.forEach(devContainer => {
+        devContainer.addEventListener('mouseover', function() {
+            gsap.to(devContainer, { scale: 1.04, boxShadow: "0 0 6px rgba(0, 0, 0, 0.2)", duration: 0.3, ease: "quad.inOut"   });
+        });
+        devContainer.addEventListener('mouseleave', function() {
+            gsap.to(devContainer, { scale: 1,  boxShadow: 'none', duration: 0.3, ease: "quad.inOut"  });
+        });
+    });
+
+    gsap.to(devContainers, { x: 40, opacity: 1, duration: 1, delay: 0.3, ease: "bounce.out" });
 
     gsap.set(logo, { scale: 2 });
     gsap.to(logo, { scale: 1, duration: 1, delay: 0.3, ease: "power1.inOut" });
