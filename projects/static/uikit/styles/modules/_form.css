@@ -48,6 +48,7 @@ textarea.input {
   border: 2px solid var(--color-light);
   transition: all 0.3s ease-in-out;
   background-color: var(--color-bg);
+  resize: none;
 }
 
 input.input[type='text']:focus,
