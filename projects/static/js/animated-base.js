@@ -14,10 +14,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     devContainers.forEach(devContainer => {
         devContainer.addEventListener('mouseover', function() {
-            gsap.to(devContainer, { scale: 1.04, boxShadow: "0 0 6px rgba(0, 0, 0, 0.2)", duration: 0.3, ease: "quad.inOut"   });
+            gsap.to(devContainer, { scale: 1.04, boxShadow: "0 0 6px rgba(0, 0, 0, 0.2)", duration: 0.3, ease: "power1.inOut"});
         });
         devContainer.addEventListener('mouseleave', function() {
-            gsap.to(devContainer, { scale: 1,  boxShadow: 'none', duration: 0.3, ease: "quad.inOut"  });
+            gsap.to(devContainer, { scale: 1,  boxShadow: 'none', duration: 0.3, ease: "power1.inOut"});
         });
     });
 
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
     gsap.to(logo, { scale: 1, duration: 1, delay: 0.3, ease: "power1.inOut" });
 
     gsap.set(span, { opacity: 0 });
-    gsap.to(span, { opacity: 1, duration: 1, delay: 0.4, ease: "bounce.out" });
+    gsap.to(span, { opacity: 1, duration: 1, delay: 0.3, ease: "bounce.out" });
 
     gsap.set(formWrapper, { y: -100, opacity: 0 });
     gsap.to(formWrapper, { y: 0, opacity: 1, duration: 1, ease: "bounce.out", delay: 0.4 });
