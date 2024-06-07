@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
     gsap.to(logo, { scale: 1, duration: 1, delay: 0.3, ease: "power1.inOut" });
 
     gsap.set(span, { opacity: 0.7 });
-    gsap.to(span, { opacity: 1, duration: 1, delay: 0.3, ease: "bounce.out" });
+    gsap.to(span, { opacity: 1, duration: 1, delay: 0.3, ease: "bounce.in" });
 
     gsap.set(formWrapper, { y: -100, opacity: 0 });
     gsap.to(formWrapper, { y: 0, opacity: 1, duration: 1, ease: "bounce.out", delay: 0.4 });
