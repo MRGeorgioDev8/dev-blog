@@ -390,7 +390,7 @@ img {
   Pagination
 ========================*/
 .pagination {
-  margin-top: 8rem;
+  margin-top: 11rem;
   margin-bottom: 10rem;
 }
 
@@ -532,7 +532,7 @@ img {
 
 .singleProject__liveLink:hover {
   font-weight: 500;
-  border-bottom: 2px solid var(--color-main);
+  color:#10c4d4;
 }
 
 .singleProject__liveLink i {
