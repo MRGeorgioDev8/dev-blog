@@ -27,11 +27,11 @@ document.addEventListener("DOMContentLoaded", function() {
     gsap.to(logo, { scale: 1, duration: 1, delay: 0.3, ease: "power1.inOut" });
 
     gsap.set(span, { opacity: 0.7 });
-    gsap.to(span, { opacity: 1, duration: 1, delay: 0.3, ease: "bounce.in" });
+    gsap.to(span, { opacity: 1, duration: 0.6, delay: 0.3, ease: "bounce.in" });
 
     gsap.set(formWrapper, { y: -100, opacity: 0 });
     gsap.to(formWrapper, { y: 0, opacity: 1, duration: 1, ease: "bounce.out", delay: 0.4 });
-    gsap.to(formWrapper, { y: "+=11", duration: 0.5, delay: 1.2 });
+    gsap.to(formWrapper, { y: "-=30", duration: 0.5, delay: 1.2 });
 
     gsap.set(cardBody, { y: -100, opacity: 0 });
     gsap.to(cardBody, { y: 0, opacity: 1, duration: 1, ease: "bounce.out", delay: 0.4 });
