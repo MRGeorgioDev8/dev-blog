@@ -8,7 +8,7 @@ input:focus {
 
 .column.card {
   position:relative;
-  right: 48px;
+  right: 70px;
 }
 
 .card.text-center {
@@ -392,6 +392,7 @@ img {
 .pagination {
   margin-top: 11rem;
   margin-bottom: 10rem;
+  margin-right: 60px;
 }
 
 .pagination > ul {
