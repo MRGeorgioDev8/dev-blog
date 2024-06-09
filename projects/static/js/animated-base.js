@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const inboxTitle = document.querySelector('.inbox__title');
     const messageContainer = document.querySelector('.message');
     const cardContainer = document.querySelector('.auth');
+    const cardProject = document.querySelector('.card.project');
 
     gsap.set(devContainers, { x: -100, opacity: 0 });
 
@@ -52,4 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     gsap.set(cardContainer, {opacity: 0 });
     gsap.to(cardContainer, {opacity: 1, ease:"quad.inOut", duration: 0.7 });
+
+    gsap.set(cardProject, {scale:0, y: -100, opacity: 0 });
+    gsap.to(cardProject, {scale: 1, y: 0, opacity: 1, duration: 0.6, ease: "quad.inOut", delay: 0.3 });
 });
