@@ -1,9 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
     const imageProject = document.querySelector('.singleProject__preview');
-    const headerProject = document.querySelector('.singleProject__subtitle');
+    const headerProject = document.querySelectorAll('.singleProject__subtitle');
     const toolStack = document.querySelectorAll('.singleProject__liveLink, .singleProject__developer');
     const projectName = document.querySelector('.singleProject__title');
+    const projectInfo = document.querySelectorAll('.singleProject__info, .project--rating');
 
+    gsap.set(projectInfo, {x: 50, opacity: 0});
+    gsap.to(projectInfo, {x: 0, opacity: 1, duration: 0.6, ease:'quad.inOut', delay: 0.9 } )
+    
     gsap.set(projectName, {y: -50, opacity: 0});
     gsap.to(projectName, {y: 0, opacity: 1, duration: 0.6, ease: 'quad.inOut', delay: 0.8});
 
