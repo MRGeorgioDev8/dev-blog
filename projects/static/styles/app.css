@@ -511,6 +511,10 @@ img {
   order: 2;
 }
 
+.singleProject__liveLink .singleProject__developer {
+  display: none;
+}
+
 @media screen and (min-width: 1081px) {
   .singleProject .column--1of3 {
     order: 1;
