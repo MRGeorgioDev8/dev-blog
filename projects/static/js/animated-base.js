@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const cardContainer = document.querySelector('.auth');
     const cardProject = document.querySelector('.card.project');
 
+    let logoAnimated = sessionStorage.getItem('logoAnimated') === 'true';
+    sessionStorage.removeItem('logoAnimated');
+
     gsap.set(devContainers, { x: -100, opacity: 0 });
 
     devContainers.forEach(devContainer => {
@@ -18,14 +21,16 @@ document.addEventListener("DOMContentLoaded", function() {
             gsap.to(devContainer, { scale: 1.04, boxShadow: "0 0 6px rgba(0, 0, 0, 0.2)", duration: 0.3, ease: "power1.inOut"});
         });
         devContainer.addEventListener('mouseleave', function() {
-            gsap.to(devContainer, { scale: 1,  boxShadow: 'none', duration: 0.3, ease: "power1.inOut"});
+            gsap.to(devContainer, { scale: 1, boxShadow: 'none', duration: 0.3, ease: "power1.inOut"});
         });
     });
 
     gsap.to(devContainers, { x: 40, opacity: 1, duration: 1, delay: 0.3, ease: "bounce.out" });
+    gsap.set(logo, { scale: 1.4 });
 
-    gsap.set(logo, { scale: 2 });
-    gsap.to(logo, { scale: 1, duration: 1, delay: 0.3, ease: "power1.inOut" });
+    if (!logoAnimated) {
+        gsap.fromTo(logo, { scale: 2 }, { scale: 1.3, duration: 1, delay: 0.3, ease: "power1.inOut" });
+    }
 
     gsap.set(span, { opacity: 0.7 });
     gsap.to(span, { opacity: 1, duration: 0.6, delay: 0.3, ease: "bounce.in" });
@@ -48,12 +53,19 @@ document.addEventListener("DOMContentLoaded", function() {
     gsap.to(inboxTitle, { x: 0, opacity: 1, duration: 1, ease: "bounce.out", delay: 0.4 });
     gsap.to(inboxTitle, { x: "+=11", duration: 0.5, delay: 1.2 });
 
-    gsap.set(messageContainer, {scale:0, y: -100, opacity: 0 });
-    gsap.to(messageContainer, {scale: 1, y: 0, opacity: 1, duration: 0.6, ease: "quad.inOut", delay: 0.3 });
+    gsap.set(messageContainer, { scale: 0, y: -100, opacity: 0 });
+    gsap.to(messageContainer, { scale: 1, y: 0, opacity: 1, duration: 0.6, ease: "quad.inOut", delay: 0.3 });
 
-    gsap.set(cardContainer, {opacity: 0 });
-    gsap.to(cardContainer, {opacity: 1, ease:"quad.inOut", duration: 0.7 });
+    gsap.set(cardContainer, { opacity: 0 });
+    gsap.to(cardContainer, { opacity: 1, ease: "quad.inOut", duration: 0.7 });
 
-    gsap.set(cardProject, {scale:0, y: -100, opacity: 0 });
-    gsap.to(cardProject, {scale: 1, y: 0, opacity: 1, duration: 0.6, ease: "quad.inOut", delay: 0.3 });
+    gsap.set(cardProject, { scale: 0, y: -100, opacity: 0 });
+    gsap.to(cardProject, { scale: 1, y: 0, opacity: 1, duration: 0.6, ease: "quad.inOut", delay: 0.3 });
+
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            sessionStorage.setItem('logoAnimated', 'true');
+        });
+    });
 });
